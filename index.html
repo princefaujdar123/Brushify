@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Brushify</title>
+</head>
+
+<body>
+
+    <div class="main">
+       <textarea id="editor" placeholder="Write text here"></textarea> 
+
+        <div id="container">
+
+            <div class="color">
+                <label>Background Color:</label>
+                <input type="color" id="bgColor" oninput="background()">
+            </div>
+
+            <div class="text">
+                <label>Text Color:</label>
+                <input type="color" id="textColor" oninput="textColor()">
+            </div>
+
+            <div class="style">
+                <label>Font Style:</label>
+                <select id="font-family" onchange="fontStyle()">
+                    <option>Serif </option>
+                    <option>Georgia</option>
+                    <option>Verdana</option>
+                    <option>cursive</option>
+                    <option>Lucida Console</option>
+                </select>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        let editor = document.getElementById("editor");
+        function background() {
+            let color = document.getElementById("bgColor").value;
+            editor.style.backgroundColor = color;
+        }
+        function textColor() {
+            let color = document.getElementById("textColor").value;
+            editor.style.color = color;
+        }
+        function fontStyle() {
+            let font = document.getElementById("font-family").value;
+            editor.style.fontFamily = font;
+        }
+
+    </script>
+
+</body>
+
+</html>
